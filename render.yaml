@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: churn-dashboard
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:server
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
